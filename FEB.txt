@@ -1,0 +1,51 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class  Employee
+{
+  private:
+     int sal,eid;
+     char name[100];
+  public:
+    void setData(int id,char n[],int s)
+    {
+	eid=id;
+	sal=s;
+	strcpy(name,n);
+    }
+    int getSal()
+    {
+    return sal;
+    }
+    void show()
+    {
+       cout<<"\n "<<eid<<"\t"<<name<<"\t"<<sal;
+    }
+};
+main()
+{
+   clrscr();
+   int i,id,sal,k=0,max;
+   char name[20];
+
+     Employee e[3];
+      for(i=0;i<3;i++)
+      {
+	cout<<"Enter id, name,sal";
+	cin>>id>>name>>sal;
+	e[i].setData(id,name,sal);
+     }
+     max=e[0].getSal();
+
+     cout<<"\n Id\tName\tSalary";
+     for(i=0;i<3;i++)
+     {
+	if(e[i].getSal()>max)
+	{
+	   k=i;
+	}
+     }
+	e[k].show();
+
+   getch();
+}

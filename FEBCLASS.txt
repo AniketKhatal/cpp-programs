@@ -1,0 +1,32 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class  Employee
+{
+  private:
+     int sal,eid;
+     char name[100];
+  public:
+    void setData(int id,char n[],int s)
+    {
+	eid=id;
+	sal=s;
+	strcpy(name,n);
+    }
+    void show()
+    {
+       cout<<"\n Id="<<eid<<"\t name="<<name<<"\t Salary="<<sal;
+    }
+};
+main()
+{
+   clrscr();
+   int id,sal;
+   char name[20];
+     cout<<"Enter id, name,sal";
+     cin>>id>>name>>sal;
+     Employee e1;
+     e1.setData(id,name,sal);
+     e1.show();
+   getch();
+}
